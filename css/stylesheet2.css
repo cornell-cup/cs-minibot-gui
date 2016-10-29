@@ -1,0 +1,79 @@
+/**
+ * ========================================
+ * MAIN LAYOUT
+ * ========================================
+ */
+
+html {
+ 	height: 100%;
+}
+body {
+	position: relative;
+	height: 100%;
+	width: 100%;
+	font-family: Helvetica;
+	font-size: 16px;
+	line-height: 28px;
+	background-color: #ffffff;
+	color: #777777;
+	overflow-x: hidden;
+}
+
+.document {
+	height: 100%;
+	position: relative;
+}
+.section {
+	position: relative;
+	background-position: bottom center;
+	background-repeat: repeat-x;
+	overflow: hidden;
+}
+.container {
+	position: relative;
+	height:100%;
+}
+
+
+
+/**
+ * ========================================
+ * PANEL LAYOUT
+ * ========================================
+ */
+
+#main-panel {
+	height: 100%;
+}
+
+h1 {
+	text-align: center;
+}
+
+input[type="file"] {
+  line-height: 10px;
+}
+
+.top-buffer { 
+	margin-top:30px; 
+}
+
+.grid {
+    border: 1px solid #ccc;
+    border-width: 1px 0 0 1px;
+}
+
+.grid div {
+    border: 1px solid #ccc;
+    border-width: 0 1px 1px 0;
+    float: left;
+}
+
+.bot {
+	height:20px;
+	width:20px;
+	background-color: #31b0d5;
+	border: 1px solid #2aabd2;
+	position:absolute;
+	margin: 0 auto;
+}
