@@ -1,30 +1,34 @@
 $(document).ready(function(){
+  var i = 1;
+  var botIdToMove = null;
+
 	$('#addBotButton').mousedown(function(){
-    bot = '<div class="bot"></div>';
-		$(".gridArea").append(bot);
+		$(".gridArea").append('<div id="bot" class="bot-bot"></div>');
+    $('.gridArea #bot').attr("id","bot" + i);
+    i += 1;
 	});
 		
-	$(document).on('click', '.bot', function(){ 
-   		$(this).css("border-color","#ffff66")
+	$(document).on('click', '.bot-bot', function(){ 
+      botIdToMove = $(this).attr('id');
    		$(document).keydown(function(e) {
    			switch (e.which) {
     			case 37:
-       				$('.bot').stop().animate({
+       				$('#' + botIdToMove).stop().animate({
             			left: '-=20px'
         			}); //left arrow key
         			break;
     			case 38:
-       				$('.bot').stop().animate({
+       				$('#' + botIdToMove).stop().animate({
             			top: '-=20px'
         			}); //up arrow key
         			break;
     			case 39:
-        			$('.bot').stop().animate({
+        			$('#' + botIdToMove).stop().animate({
             			left: '+=20px'
         			}); //right arrow key
        			 	break;
     			case 40:
-        			$('.bot').stop().animate({
+        			$('#' + botIdToMove).stop().animate({
             			top: '+=20px'
         			}); //bottom arrow key
        				break;
