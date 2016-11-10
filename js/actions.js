@@ -1,3 +1,4 @@
+var pixel = 1;
 $(document).ready(function(){
   var i = 1;
   var botIdToMove = null;
@@ -13,7 +14,7 @@ $(document).ready(function(){
    		$(document).keydown(function(e) {
    			switch (e.which) {
     			case 37:
-       				$('#' + botIdToMove).stop().animate({
+       				$('#' + botIdToMove).animate({
             			left: '-=20px'
         			}); //left arrow key
         			break;

@@ -16,7 +16,7 @@ body {
 	line-height: 28px;
 	background-color: #ffffff;
 	color: #777777;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 
 .document {
