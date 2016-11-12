@@ -6,6 +6,7 @@
 var radius = 20;
 var left_motor = 0;
 var right_motor = 0;
+
 /*
 var sensors = [
     [radius, radius],
@@ -130,7 +131,16 @@ function frame() {
 
 }
 
+function xLocation(canvas,event){    
+    return event.clientX*(800/740);
+}
+
+function yLocation(canvas,event){
+    return event.clientY*(800/740);
+}
+
 window.addEventListener("load", function() {
+
     canvas = document.getElementById("sc");
     ctx = canvas.getContext("2d");
     floor = document.getElementById("floor");
@@ -138,9 +148,18 @@ window.addEventListener("load", function() {
 
     readTextFile();
 
+  
+    canvas.addEventListener("click", function(event){
+        px = xLocation(canvas,event);
+        py = yLocation(canvas,event);
+        console.log(px + " " + py);
+
+    });
+            
+    
     document.getElementById("run").addEventListener("click", function() {
-        px = 400;
-        py = 400;
+        //px = 400;
+        //py = 400;
         rot = Math.PI;
         left_motor = 0;
         right_motor = 0;
@@ -165,8 +184,8 @@ window.addEventListener("load", function() {
 <style type="text/css">
 .half {
     position: absolute;
-    width: 49%;
-    height: 90%;
+    width: 800px;
+    height: 800px;
     text-align: center;
 }
 
