@@ -1,4 +1,13 @@
 var pixel = 1;
+var img = new Image();
+var div = document.getElementById('path');
+
+img.onload = function(){
+  div.appendChild(img);
+};
+
+img.src="GUIPAth.png";
+
 $(document).ready(function(){
   var i = 1;
   var botIdToMove = null;
