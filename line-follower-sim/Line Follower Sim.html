@@ -3,7 +3,7 @@
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
     <title>Line Follower Sim</title>
 <script type="text/javascript">
-var radius = 20;
+var radius = 10;
 var left_motor = 0;
 var right_motor = 0;
 
@@ -17,9 +17,9 @@ var sensors = [
 var sensors = [
     [radius, -radius *0.5],
     [radius, radius * 0.5],
-    [radius+10, -radius*0.3],
-    [radius+10, radius*0.3],
-    [radius+20, 0]
+    [radius*1.5, -radius*0.3],
+    [radius*1.5, radius*0.3],
+    [radius*2, 0]
 ];
 var px = 400;
 var py = 400;
@@ -67,13 +67,13 @@ function frame() {
             if (x >= 0 && y >= 0 && x < 800 && y < 800) {
                 var color = ctx.getImageData(x, y, 1, 1).data;
                 ctx.fillStyle = "rgb(" + color[0] + "," + color[1] + "," + color[2] + ")";
-                ctx.fillRect(20, 20 + 60 * i, 40, 40);
+                ctx.fillRect(20 + 60 * i, 20, 40, 40);
                 ctx.strokeStyle = "black";
-                ctx.strokeRect(20, 20 + 60 * i, 40, 40);
+                ctx.strokeRect(20 + 60 * i, 20, 40, 40);
                 readings.push((color[0] + color[1] + color[2]) / 3);
             }
             ctx.fillStyle = "teal"; 
-            ctx.fillText("Sensor " + i, 20, 15 + 60 * i);
+            ctx.fillText("Sensor " + i, 20 + 60 * i, 15);
         }
         
         // Draw the bot
@@ -178,7 +178,7 @@ window.addEventListener("load", function() {
             paused = true;
         }
     })
-    setInterval(frame, 20);
+    setInterval(frame, 4);
 });
 </script>
 <style type="text/css">
