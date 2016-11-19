@@ -1,21 +1,24 @@
 var speed = 0.5;
-var lbacksensor = sensor[0] < 128;
-var rbacksensor = sensor[1] < 128;
-var lmiddlesensor = sensor[2] < 128;
-var rmiddlesensor = sensor[3] < 128;
+var lsensor = sensor[2] < 128;
+var rsensor = sensor[3] < 128;
 var centersensor = sensor[4] < 128;
 
-if (centersensor) {
+
+
+// if (centersensor){
+//     return [speed, speed];
+// }
+if (lsensor && rsensor) {
     // Move forward
     return [speed, speed];
 }
-else if (lbacksensor) {
-    // Turn left
+else if (lsensor) {
+    // Turn right
     state.last = 1;
     return [0, speed];
 }
-else if (rbacksensor) {
-    // Turn right
+else if (rsensor) {
+    // Turn left
     state.last = -1;
     return [speed, 0];
 }
@@ -28,6 +31,6 @@ else {
         return [speed, 0];
     }
     else {
-        return [0, -speed];
+        return [0, speed];
     }
 }

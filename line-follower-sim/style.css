@@ -1,0 +1,36 @@
+body {
+    overflow: hidden;
+}
+
+.half {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    text-align: center;
+}
+
+.left {
+    left: 0%;
+}
+
+.right {
+    right: 0%;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+#sc {
+    width: 97%;
+    border: 1px solid gray;
+}
+
+#code {
+    width: 90%;
+    height: 90%;
+    font-size: 1.2em;
+    font-family: "consolas", monospace;
+}
+
+
